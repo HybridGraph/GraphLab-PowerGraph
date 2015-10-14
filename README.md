@@ -13,7 +13,7 @@ The building, installation and tutorial of PowerLyra fully follow that of GraphL
 ###3.1 PageRank
 _cd $GRAPHLAB_HOME/release/toolkits/graph_analytics_  
 _hadoop dfs -rmr graphlab/output_  
-_mpiexec -n 5 env CLASSPATH=\`hadoop classpath\` pagerank --format=adj --graph_opts="ingress=oblivious" --graph=hdfs:///user/root/graphlab/livej/ --saveprefix=hdfs:///user/root/graphlab/output/pagerank --iterations=5 --ver_block_size=10000 --ver_buf_block_num=300 --edge_block_size=100 --useVerDisk=1 --useEdgeDisk=1_
+_mpiexec -n 5 env CLASSPATH=\`hadoop classpath\` pagerank --format=adj --graph_opts="ingress=oblivious" --graph=hdfs:///user/root/graphlab/livej/ --saveprefix=hdfs:///user/root/graphlab/output/pagerank --iterations=5 --ver_block_size=10000 --ver_buf_block_num=300 --edge_block_size=10000 --useVerDisk=1 --useEdgeDisk=1_
 
 About input arguments:  
 -n:  the number of MPI instances to run this job  
