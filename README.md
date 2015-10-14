@@ -4,7 +4,7 @@ A modified GraphLab PowerGraph. Vertices and edges reside on local disks.
 ##1. Introduction
 The disk-resident GraphLab PowerGraph is based on the latest codebase of GraphLab PowerGraph (a distributed graph computation framework written in C++). The disk version supports accessing vertices and edges on disk. Specially, all edges are spilled onto disk since they are read sequentially. And for vertices, the disk version stores them in blocks and manages the blocks using the LRU replacing strategy. 
 
-Note that the disk version cannot improve the data processing capacity, compared with the original GraphLab PowerGraph. This is because the modified version still employs the vertex-cut graph partitioning mechanism in the original system. Currently, the vertex-cut method works in memory, which limits the data processing capacity. We just use the disk-version to validate the I/O-inefficiency of existing pull-based techniques (GraphLab PowerGraph is a well-known memory-resident pull-based system).
+Note that 'the disk version cannot improve the data processing capacity, compared with the original GraphLab PowerGraph'. This is because the modified version still employs the vertex-cut graph partitioning mechanism in the original system. Currently, the vertex-cut method works in memory, which limits the data processing capacity. We just use the disk-version to validate the I/O-inefficiency of existing pull-based techniques (GraphLab PowerGraph is a well-known memory-resident pull-based system).
 
 ##2. Building
 The building, installation and tutorial of PowerLyra fully follow that of GraphLab PowerGraph.
