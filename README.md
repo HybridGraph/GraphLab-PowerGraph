@@ -29,7 +29,7 @@ About input arguments:
 ###3.2 Single Source Shortest Path (SSSP)  
 _cd $GRAPHLAB_HOME/release/toolkits/graph_analytics_  
 _hadoop dfs -rmr graphlab/output_  
-_mpiexec -n 5 env CLASSPATH=`hadoop classpath` sssp --format=adj --graph_opts="ingress=oblivious" --graph=hdfs:///user/root/graphlab/livej/ --saveprefix=hdfs:///user/root/graphlab/output/pagerank --iterations=100 --ver_block_size=10000 --ver_buf_block_num=$5 --edge_block_size=$6 --useVerDisk=1 --useEdgeDisk=1 --source=2_
+_mpiexec -n 5 env CLASSPATH=\`hadoop classpath\` sssp --format=adj --graph_opts="ingress=oblivious" --graph=hdfs:///user/root/graphlab/livej/ --saveprefix=hdfs:///user/root/graphlab/output/pagerank --iterations=100 --ver_block_size=10000 --ver_buf_block_num=$5 --edge_block_size=$6 --useVerDisk=1 --useEdgeDisk=1 --source=2_
 
 About input arguments:  
 Compared with PageRank, the additional argument is "--source", the source vertex id.
