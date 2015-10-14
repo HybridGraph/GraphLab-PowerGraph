@@ -11,25 +11,25 @@ The building, installation and tutorial of PowerLyra fully follow that of GraphL
 
 ##3. Running a job
 ###3.1 PageRank
-cd $GRAPHLAB_HOME/release/toolkits/graph_analytics  
-hadoop dfs -rmr graphlab/output  
-mpiexec -n 5 env CLASSPATH=`hadoop classpath` pagerank --format=adj --graph_opts="ingress=oblivious" --graph=hdfs:///user/root/graphlab/livej/ --saveprefix=hdfs:///user/root/graphlab/output/pagerank --iterations=5 --ver_block_size=10000 --ver_buf_block_num=$5 --edge_block_size=$6 --useVerDisk=1 --useEdgeDisk=1
+_cd $GRAPHLAB_HOME/release/toolkits/graph_analytics_  
+_hadoop dfs -rmr graphlab/output_  
+_mpiexec -n 5 env CLASSPATH=`hadoop classpath` pagerank --format=adj --graph_opts="ingress=oblivious" --graph=hdfs:///user/root/graphlab/livej/ --saveprefix=hdfs:///user/root/graphlab/output/pagerank --iterations=5 --ver_block_size=10000 --ver_buf_block_num=$5 --edge_block_size=$6 --useVerDisk=1 --useEdgeDisk=1_
 
-About input arguments:
--n:  the number of MPI instances to run this job
---graph:  the input directory on HDFS
---saveprefix: the output directory on HDFS
---iterations: the maximal number of iterations
---ver_block_size: the number of vertices in each vertex block (used in disk version)
---ver_buf_block_num:  the number of vertex blocks which are kept in memory
---edge_block_size:  the number of vertices associated with edges in each edge block
---useVerDisk:  1(storing vertices on disk):0(keeping all vertices in memory)
+About input arguments:  
+-n:  the number of MPI instances to run this job  
+--graph:  the input directory on HDFS  
+--saveprefix: the output directory on HDFS  
+--iterations: the maximal number of iterations  
+--ver_block_size: the number of vertices in each vertex block (used in disk version)  
+--ver_buf_block_num:  the number of vertex blocks which are kept in memory  
+--edge_block_size:  the number of vertices associated with edges in each edge block  
+--useVerDisk:  1(storing vertices on disk):0(keeping all vertices in memory)  
 --useEdgeDisk:  1(storing edges on disk):0(keeping all edges in memory)
 
-###3.2 Single Source Shortest Path (SSSP)
-cd $GRAPHLAB_HOME/release/toolkits/graph_analytics
-hadoop dfs -rmr graphlab/output
-mpiexec -n 5 env CLASSPATH=`hadoop classpath` sssp --format=adj --graph_opts="ingress=oblivious" --graph=hdfs:///user/root/graphlab/livej/ --saveprefix=hdfs:///user/root/graphlab/output/pagerank --iterations=100 --ver_block_size=10000 --ver_buf_block_num=$5 --edge_block_size=$6 --useVerDisk=1 --useEdgeDisk=1 --source=2
+###3.2 Single Source Shortest Path (SSSP)  
+_cd $GRAPHLAB_HOME/release/toolkits/graph_analytics_  
+_hadoop dfs -rmr graphlab/output_  
+_mpiexec -n 5 env CLASSPATH=`hadoop classpath` sssp --format=adj --graph_opts="ingress=oblivious" --graph=hdfs:///user/root/graphlab/livej/ --saveprefix=hdfs:///user/root/graphlab/output/pagerank --iterations=100 --ver_block_size=10000 --ver_buf_block_num=$5 --edge_block_size=$6 --useVerDisk=1 --useEdgeDisk=1 --source=2_
 
-About input arguments:
+About input arguments:  
 Compared with PageRank, the additional argument is "--source", the source vertex id.
